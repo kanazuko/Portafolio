@@ -8,23 +8,4 @@
 
 <partial name="_Habilidades" />
 
-@if (Model.Proyectos is not null){
-    <div class="tex-center" style="padding-top: 6rem;">
-        <h1>Mis trabajos recientes</h1>
-        <p>Aqui puedes ver algunos de mis trabajos más recientes.</p>
-        
-        <div class="container">
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                @foreach (var proyecto in Model.Proyectos)
-                {
-                    <div class="col">
-                        <div class="card h100">
-                        </div>
-                    </div>
-                }
-
-            </div>
-        </div>
-
-    </div>
-}
+<partial name="_SeccionProyectos" model="Model.Proyectos"/>
