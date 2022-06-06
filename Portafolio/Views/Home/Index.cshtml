@@ -1,61 +1,30 @@
-﻿@{
+﻿@model HomeIndexViewModel
+
+@{
     ViewData["Title"] = "Página principal";
 }
 
 <partial name="_Presentacion" />
 
-    <div style="margin-top: 10px">
-        <div class="row justify-content-md-center text-center">
-            <div class="col col-3 bg-white habilidades" style="
-                border-top: 1px solid 	#F5F5F5 ;
-                border-bottom: 1px solid 	#F5F5F5;
-                border-radius:15px 0 0 15px;
-                box-shadow:0 5px 5px 0 gray">
-                <i class="bi-hdd-fill"></i>
-                <h4>Back-End</h4>
-                <p>Trabajo desde el desarrollo, pruebas automáticas, y puesta en producción con entrega continua.</p>
-                <p class="text-primary cabecera">
-                    Stack:
-                </p>
-                <p>
-                    ASP.NET Core, SQL Server, PHP, MySQL
-                </p>
-                <p class="text-primary cabecera">
-                    Experiencia
-                </p>
-                <ul>
-                    <li>Web Development</li>
-                    <li>Devux</li>
-                    <li>Barcel</li>
-                </ul>
-            </div>
+<partial name="_Habilidades" />
 
+@if (Model.Proyectos is not null){
+    <div class="tex-center" style="padding-top: 6rem;">
+        <h1>Mis trabajos recientes</h1>
+        <p>Aqui puedes ver algunos de mis trabajos más recientes.</p>
+        
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach (var proyecto in Model.Proyectos)
+                {
+                    <div class="col">
+                        <div class="card h100">
+                        </div>
+                    </div>
+                }
 
-
-            <div class="col col-3 bg-white habilidades" style="
-                border-top: 1px solid 	#F5F5F5;
-                border-bottom: 1px solid 	#F5F5F5;
-                border-radius:0 15px 15px 0;
-                box-shadow:0 5px 5px 0 gray">
-            
-                <i class="bi-code-slash"></i>
-                <h4>Front-End</h4>
-                <p>Puedo crear front-ends los cuales cumplen con los requerimentos del negocio</p>
-                <p class="text-primary cabecera">
-                    Stack:
-                </p>
-                <p>
-                    React, Angular, Blazor
-                </p>
-                <p class="text-primary cabecera">
-                    Experiencia
-                </p>
-                <ul>
-                    <li>Web Development</li>
-                    <li>Devux</li>
-                    <li>Barcel</li>
-                </ul>
             </div>
         </div>
+
     </div>
-</div>
+}
